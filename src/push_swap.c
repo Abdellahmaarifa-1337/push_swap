@@ -37,9 +37,10 @@ int main(int ac, char **av)
     // rotate_stack(&a, &b, "rrr");
 
 	// sort the stack
-	sort_stack(a, b);
+	if (!is_sorted(a->stack, a->size))
+		sort_stack(a, b);
 	// print stacks
-  //  print_stack(a, 'a');
-   //print_stack(b, 'b');
+    // print_stack(a, 'a');
+    // print_stack(b, 'b');
     return (0);
 }

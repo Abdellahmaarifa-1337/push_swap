@@ -2,6 +2,11 @@
 
 void ss(stack *a, stack *b)
 {
-	if (swap_top(a) || swap_top(b))
+	int i;
+	int j;
+
+	i = swap_top(a);	
+	j = swap_top(b);
+	if (i || j)
 		ft_putstr("ss\n");
 }

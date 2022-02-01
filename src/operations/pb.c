@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void pa(stack *a, stack *b)
+void pb(stack *a, stack *b)
 { 
     int temp;
 

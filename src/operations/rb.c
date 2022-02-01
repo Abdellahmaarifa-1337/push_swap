@@ -2,6 +2,6 @@
 
 void rb(stack *b)
 {
-	rotate_stack(b);
-	ft_putstr("rb/n");	
+	if (rotate_stack(b))
+		ft_putstr("rb\n");	
 }

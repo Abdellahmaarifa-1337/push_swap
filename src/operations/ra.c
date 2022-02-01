@@ -2,6 +2,7 @@
 
 void ra(stack *a)
 {
-	rotate_stack(a);
-	ft_putstr("ra/n");	
+
+	if (rotate_stack(a))
+		ft_putstr("ra\n");	
 }

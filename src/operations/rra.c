@@ -2,6 +2,6 @@
 
 void rra(stack *a)
 {
-	rotate_stack_reverse(a);
-	ft_putstr("rra/n");	
+	if (rotate_stack_reverse(a))
+		ft_putstr("rra\n");	
 }

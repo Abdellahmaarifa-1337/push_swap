@@ -2,7 +2,7 @@
 
 void sort_three(stack *a, stack *b)
 {
-	int i = find_max(a->stack, a->size, 1);
+	int i = find_max(a);
 	if (i == 0)
 	{
 		ra(a);
@@ -18,5 +18,4 @@ void sort_three(stack *a, stack *b)
 	}
 	else if (a->stack[0] > a->stack[1])
 		sa(a);
-	//printf("index is %d\n", i);
 }

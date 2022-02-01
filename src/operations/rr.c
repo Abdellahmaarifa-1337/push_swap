@@ -2,7 +2,12 @@
 
 void rr(stack *a, stack *b)
 {
-	rotate_stack(a);
-	rotate_stack(b);
-	ft_putstr("rr/n");	
+	int i;
+	int j;
+
+	i = rotate_stack(a);
+	j = rotate_stack(b);
+
+	if (i || j)
+		ft_putstr("rr\n");	
 }

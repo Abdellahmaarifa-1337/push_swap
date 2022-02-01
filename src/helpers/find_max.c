@@ -1,22 +1,22 @@
 #include "../push_swap.h"
 
-int find_max(int *arr, int size, int max)
+int find_max(stack *a)
 {
-	int k = 0;
-	int i = 0;
-	int j;
-	while (k < size)
-	{
-		j = 0;
-		while (j < size)
-		{
-			if (arr[j] > arr[i] && max)
-				i = j;
-			if (arr[j] < arr[i] && !max)
-				i = j;
-			j++;
-		}
-		k++;
-	}
-	return i;
+    int *arr;
+    arr = (int *)malloc(sizeof(int) * a->size);
+    int i = 0;
+    while(i < a->size)
+    {
+        arr[i] = a->stack[i];
+        i++;
+    }
+    sort_arr(arr, a->size);
+    i = 0;
+    while(i < a->size)
+    {
+        if(a->stack[i] == arr[a->size - 1])
+            break;
+        i++;
+    }
+    return i;
 }
