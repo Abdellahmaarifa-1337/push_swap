@@ -13,21 +13,15 @@ void print_stack(stack *a, char stack)
 
 int main(int ac, char **av)
 {
-    int i;
 	stack *a;
 	stack *b;
-	a = (stack *)malloc(sizeof(stack));
+	
+	if (ac < 2)
+		return (0);
+    error_checker(ac, av);
+	a = init_stack(ac, av);
 	b = (stack *)malloc(sizeof(stack));
-    checker(ac, av);
-    a->stack = (int *)malloc(sizeof(int) * (ac));
     b->stack = (int *)malloc(sizeof(int) * (ac));
-    i = 0;
-    while (i < ac - 1)
-	{
-       	a->stack[i] = atoi(av[i + 1]);
-		i++;
-	}
-	a->size = ac - 1;
     b->size = 0;
      //swap_stack(a, b, "as");
      //push_stack(a, b, "pb");
@@ -42,5 +36,13 @@ int main(int ac, char **av)
 	// print stacks
     // print_stack(a, 'a');
     // print_stack(b, 'b');
+	free(a->stack);
+	free(b->stack);
+	free(a);
+	free(b);
+	while (1)
+	{
+		
+	}
     return (0);
 }

@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void rr(stack *a, stack *b)
+int rr(stack *a, stack *b, int print)
 {
 	int i;
 	int j;
@@ -8,6 +8,7 @@ void rr(stack *a, stack *b)
 	i = rotate_stack(a);
 	j = rotate_stack(b);
 
-	if (i || j)
+	if ((i || j) && print)
 		ft_putstr("rr\n");	
+	return 1;
 }

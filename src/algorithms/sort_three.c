@@ -5,17 +5,17 @@ void sort_three(stack *a, stack *b)
 	int i = find_max(a);
 	if (i == 0)
 	{
-		ra(a);
+		ra(a, 1);
 		if (a->stack[0] > a->stack[1])
-			sa(a);
+			sa(a, 1);
 	}
 	else if (i == 1 && a->stack[2] < a->stack[0])
-		rra(a);
+		rra(a, 1);
 	else if (i == 1)
 	{
-		sa(a);
-		ra(a);
+		sa(a, 1);
+		ra(a, 1);
 	}
 	else if (a->stack[0] > a->stack[1])
-		sa(a);
+		sa(a, 1);
 }

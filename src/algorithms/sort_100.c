@@ -20,11 +20,11 @@ static void rotate_best (stack *a, stack *b, moves *best_moves)
 		best_moves->to_a = 0;
 	}
 	while (k-- > 0)
-		rr(a, b);
+		rr(a, b, 1);
 	while ((best_moves->to_a)-- > 0)
-		ra(a);
+		ra(a, 1);
 	while ((best_moves->to_b)-- > 0)
-		rb(b); 
+		rb(b, 1); 
 }
 static void rotate_best_reverse (stack *a, stack *b, moves *best_moves)
 {
@@ -44,11 +44,11 @@ static void rotate_best_reverse (stack *a, stack *b, moves *best_moves)
 		best_moves->to_a = 0;
 	}
 	while (k-- > 0)
-		rrr(a,b);
+		rrr(a, b, 1);
 	while ((best_moves->to_a)-- > 0)
-		rra(a);
+		rra(a, 1);
 	while ((best_moves->to_b)-- > 0)
-		rrb(b); 
+		rrb(b, 1); 
 }
 static void push_best(stack *a, stack *b)
 {
@@ -64,22 +64,25 @@ static void push_best(stack *a, stack *b)
 		k = 0;
 		while(k++ < absolute(best_moves->to_b))
 			if (best_moves->to_b > 0)
-				rb(b);
+				rb(b, 1);
 			else
-				rrb(b);
+				rrb(b, 1);
 		k = 0;
 		while(k++ < absolute(best_moves->to_a))
 			if (best_moves->to_a > 0)
-				ra(a);
+				ra(a, 1);
 			else
-				rra(a);
+				rra(a, 1);
 	}
-	pa(a, b);
+	pa(a, b, 1);
+	free(best_moves);
 }
 
 static lis *get_lis(stack *a)
 {
  	stack *temp;
+	lis	*lis_temp;
+
     temp = copy_stack(a);
     int min_temp = find_min(temp);
     int min = temp->stack[min_temp];
@@ -90,7 +93,10 @@ static lis *get_lis(stack *a)
         else
             rotate_stack_reverse(temp);
     }
-    return (find_LIS(temp->stack, temp->size));
+	lis_temp = find_LIS(temp->stack, temp->size);
+	free(temp->stack);
+	free(temp);
+    return (lis_temp);
 }
 void sort_100(stack *a, stack *b)
 {
@@ -101,9 +107,11 @@ void sort_100(stack *a, stack *b)
     while(a->size > lis_temp->size)
     {
         while(is_in_lis(lis_temp, a->stack[0]))
-            ra(a);
-        pb(a, b);
+            ra(a, 1);
+        pb(a, b, 1);
     }
+	free(lis_temp->arr);
+	free(lis_temp);
     while(b->size)
 		push_best(a, b);
     int min_index = find_min(a);
@@ -111,9 +119,9 @@ void sort_100(stack *a, stack *b)
     while(a->stack[0] != min_a)
     {
         if (min_index >= a->size / 2)
-            ra(a);
+            ra(a, 1);
         else
-            rra(a);
+            rra(a, 1);
     }
 }
 

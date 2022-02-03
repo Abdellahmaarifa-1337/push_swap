@@ -1,8 +1,9 @@
 #include "../push_swap.h"
 
-void ra(stack *a)
+int ra(stack *a, int print)
 {
 
-	if (rotate_stack(a))
+	if (rotate_stack(a) && print)
 		ft_putstr("ra\n");	
+	return 1;
 }

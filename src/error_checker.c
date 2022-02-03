@@ -13,7 +13,7 @@ static int is_duplicate(char *s, char **av, int ac)
     char *str;
     while(i < ac)
     {
-        if(atoi(s) == atoi(av[i]))
+        if(ft_atoi(s) == ft_atoi(av[i]))
             count++;
         i++;
     }
@@ -23,22 +23,22 @@ static int is_duplicate(char *s, char **av, int ac)
 }
 static int check_max(char *s)
 {
-     if((s[0] == '-' && atoi(s) > 0) || (s[0] != '-' && atoi(s) < 0))
+	while (*s == 32 || (*s >= 9 && *s <= 13))
+		s++;
+    if((s[0] == '-' && ft_atoi(s) > 0) || (s[0] != '-' && ft_atoi(s) < 0))
         return (1);
-     return(0);
+    return(0);
 }
 
-int checker(int ac, char **av)
+int error_checker(int ac, char **av)
 {
     int i;
     int n;
     n = 0;
     i = 1;
-    if (ac < 2)
-        throw_err();
     while(i < ac)
     {
-        if(!is_digit(av[i]))
+        if(!str_isdigit(av[i]))
             throw_err();
         if(is_duplicate(av[i], av, ac))
             throw_err();

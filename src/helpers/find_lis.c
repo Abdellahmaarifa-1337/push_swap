@@ -1,4 +1,5 @@
 #include "../push_swap.h"
+/*
 int calc_LIS(int *arr, int index, int size)
 {
     int i = 1;
@@ -14,6 +15,8 @@ int calc_LIS(int *arr, int index, int size)
     }
     return i;
 }
+*/
+/*
 int *get_LIS(int *arr, int LIS_index, int LIS_size, int size)
 {
     int *LIS;
@@ -34,7 +37,7 @@ int *get_LIS(int *arr, int LIS_index, int LIS_size, int size)
     }
     return LIS;
 }
-
+*/
 void append_to_lis(lis *lis_list, int elm)
 {
     int *new_arr = (int *)malloc(sizeof(int) * (lis_list->size + 1));
@@ -67,12 +70,13 @@ lis *copy_lis(lis *lis_list)
 
 
 
-
-lis *find_LIS(int *arr, int size)
+lis **init_lises(int *arr, int size)
 {
-    lis **all_lis;
+	lis **all_lis;
+	int n;
+
+	n = 0;
     all_lis = (lis **)malloc(sizeof(lis *) * size);
-    int n = 0;
     while(n < size)
     {
         lis *init_lis;
@@ -83,22 +87,14 @@ lis *find_LIS(int *arr, int size)
         all_lis[n] = init_lis;
         n++;
     }
-    append_to_lis(all_lis[0], arr[0]);
-    int i = 1;
-    int j;
-    while(i < size)
-    {
-        j = 0;
-        while (j < i)
-        {
-            if(arr[i] > arr[j] && all_lis[i]->size < all_lis[j]->size + 1)
-                all_lis[i] = copy_lis(all_lis[j]);
-            j++;
-        }
-        append_to_lis(all_lis[i], arr[i]);
-        i++;
-    }
-    lis *temp;
+	append_to_lis(all_lis[0], arr[0]);
+	return (all_lis);
+}
+lis *get_perfect_lis(lis **all_lis, int size)
+{
+	lis *temp;
+	int i;
+	
     temp = copy_lis(all_lis[0]);
     i = 1;
     while(i < size)
@@ -106,11 +102,41 @@ lis *find_LIS(int *arr, int size)
         if(all_lis[i]->size > temp->size)
         {
             free(temp->arr);
+			free(temp);
             temp = copy_lis(all_lis[i]);
         }
         free(all_lis[i]->arr);
+		free(all_lis[i]);
         i++;
     }
+	return (temp);
+}
+lis *find_LIS(int *arr, int size)
+{
+    lis **all_lis;
+	lis *perfect_lis;
+  	int j;
+	int i;
 
-    return temp;
+    all_lis = init_lises(arr, size);
+	i = 1;
+    while(i < size)
+    {
+        j = 0;
+        while (j < i)
+        {
+            if(arr[i] > arr[j] && all_lis[i]->size < all_lis[j]->size + 1)
+			{
+				free(all_lis[i]->arr);
+				free(all_lis[i]);
+                all_lis[i] = copy_lis(all_lis[j]);
+			}
+			j++;
+        }
+        append_to_lis(all_lis[i], arr[i]);
+        i++;
+    }
+	perfect_lis = get_perfect_lis(all_lis, size);
+	free(all_lis);
+    return (perfect_lis);
 }

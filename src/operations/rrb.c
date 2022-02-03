@@ -1,7 +1,8 @@
 #include "../push_swap.h"
 
-void rrb(stack *b)
+int rrb(stack *b, int print)
 {
-	if (rotate_stack_reverse(b))
+	if (rotate_stack_reverse(b) && print)
 		ft_putstr("rrb\n");	
+	return 1;
 }

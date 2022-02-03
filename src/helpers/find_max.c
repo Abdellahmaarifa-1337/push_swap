@@ -18,5 +18,6 @@ int find_max(stack *a)
             break;
         i++;
     }
+	free(arr);
     return i;
 }

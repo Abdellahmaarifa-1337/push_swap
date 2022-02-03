@@ -18,5 +18,6 @@ int find_min(stack *a)
             break;
         i++;
     }
+	free(arr);
     return i;
 }

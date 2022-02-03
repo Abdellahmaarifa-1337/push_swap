@@ -29,7 +29,7 @@ void shift(stack *stack);
 void append(stack *stack, int n);
 int rotate_stack(stack *stack);
 int rotate_stack_reverse(stack *stack);
-int is_digit(char *s);
+int str_isdigit(char *s);
 int find_max(stack *a);
 stack *copy_stack(stack *a);
 int find_min(stack *a);
@@ -40,21 +40,35 @@ void sort_arr(int *arr, int size);
 int *copy_sort_stack(stack *a, int elm);
 int absolute(int a);
 int is_sorted(int *arr, int size);
+int	ft_strncmp(const char	*s1, const char	*s2, size_t	n);
+stack *init_stack(int ac, char **av);
+int	ft_isdigit(int c);
+int	ft_atoi(const char	*str);
+//GET NEXT LINE
+char	*ft_substr(char *s, unsigned int start, size_t len);
+int		get_nl(const char *s);
+char	*ft_strdup(const char	*src);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*get_next_line(int fd, int buffer_size);
+char	*get_line(char **s);
+
+
 // OPERATION
-void sa(stack *a);
-void sb(stack *b);
-void ss(stack *a, stack *b);
-void pa(stack *a, stack *b);
-void pb(stack *a, stack *b);
-void ra(stack *a);
-void rb(stack *b);
-void rr(stack *a, stack *b);
-void rra(stack *a);
-void rrb(stack *b);
-void rrr(stack *a, stack *b);
+int sa(stack *a, int print);
+int sb(stack *b, int print);
+int ss(stack *a, stack *b, int print);
+int pa(stack *a, stack *b, int print);
+int pb(stack *a, stack *b, int print);
+int ra(stack *a, int print);
+int rb(stack *b, int print);
+int rr(stack *a, stack *b, int print);
+int rra(stack *a, int print);
+int rrb(stack *b, int print);
+int rrr(stack *a, stack *b, int print);
 
 //error checker 
-int checker(int ac, char **av);
+int error_checker(int ac, char **av);
 
 //sorting algo
 void sort_stack(stack *a, stack *b);
