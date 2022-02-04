@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:17:55 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:17:57 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:26:54 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_in_lis(lis *lis_arr, int n)
+int	is_in_lis(t_lis *lis_arr, int n)
 {
 	int	i;
 

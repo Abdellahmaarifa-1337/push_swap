@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:49:30 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 11:56:24 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:22:42 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	calc_moves_to_b(stack *b, int elm)
+int	calc_moves_to_b(t_stack *b, int elm)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	calc_moves_to_b(stack *b, int elm)
 		return (i - b->size);
 }
 
-int	calc_moves_to_a(stack *a, int elm)
+int	calc_moves_to_a(t_stack *a, int elm)
 {
 	int	less_then_elm;
 	int	i;
@@ -50,14 +50,14 @@ int	calc_moves_to_a(stack *a, int elm)
 		return (i - a->size + 1);
 }
 
-moves	*calc_best_moves(stack *a, stack *b)
+t_moves	*calc_best_moves(t_stack *a, t_stack *b)
 {
-	moves	*push_moves;
+	t_moves	*push_moves;
 	int		i;
 	int		to_b;
 	int		to_a;
 
-	push_moves = (moves *)malloc(sizeof(moves));
+	push_moves = (t_moves *)malloc(sizeof(t_moves));
 	push_moves->to_a = a->size * 2;
 	push_moves->to_b = a->size * 2;
 	i = 0;
@@ -77,7 +77,7 @@ moves	*calc_best_moves(stack *a, stack *b)
 	return (push_moves);
 }
 
-int	smallest_before_x(stack *a, int elm)
+int	smallest_before_x(t_stack *a, int elm)
 {
 	int	index;
 	int	*a_sorted;

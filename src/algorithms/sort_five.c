@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:05:35 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:06:02 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:23:48 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	push_min(stack *a, stack *b, int index)
+static void	push_min(t_stack *a, t_stack *b, int index)
 {
 	int	min;
 
@@ -27,7 +27,7 @@ static void	push_min(stack *a, stack *b, int index)
 	pb(a, b, 1);
 }
 
-void	sort_five(stack *a, stack *b)
+void	sort_five(t_stack *a, t_stack *b)
 {
 	push_min(a, b, find_min(a));
 	push_min(a, b, find_min(a));

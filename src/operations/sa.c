@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:26:39 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:26:43 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:28:30 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	sa(stack *a, int print)
+int	sa(t_stack *a, int print)
 {
 	if (swap_top(a) && print)
 		ft_putstr("sa\n");

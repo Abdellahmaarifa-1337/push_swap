@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:23:52 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:24:12 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:27:52 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	pb(stack *a, stack *b, int print)
+int	pb(t_stack *a, t_stack *b, int print)
 {
 	int	temp;
 

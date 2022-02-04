@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:19:22 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:19:53 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:27:14 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	rotate_stack_reverse(stack *stack)
+int	rotate_stack_reverse(t_stack *stack)
 {
 	int	temp;
 

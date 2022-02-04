@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:06:08 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:06:51 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:23:57 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort_three(stack *a, stack *b)
+void	sort_three(t_stack *a, t_stack *b)
 {
 	int	i;
 

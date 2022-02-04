@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:15:31 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:16:26 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:26:20 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	find_min(stack *a)
+int	find_min(t_stack *a)
 {
 	int	*arr;
 	int	i;

@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:07:56 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:08:30 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:24:27 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	*copy_sort_stack(stack *a, int elm)
+int	*copy_sort_stack(t_stack *a, int elm)
 {
 	int	*arr;
 	int	i;

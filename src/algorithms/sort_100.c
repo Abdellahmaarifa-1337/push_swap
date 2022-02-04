@@ -6,99 +6,32 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:56:44 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:05:22 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:53:11 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	rotate_best(stack *a, stack *b, moves *best_moves)
+static void	push_best(t_stack *a, t_stack *b)
 {
-	int	k;
-
-	if (best_moves->to_a > best_moves->to_b)
-	{
-		k = best_moves->to_b;
-		best_moves->to_a -= k;
-		best_moves->to_b = 0;
-	}
-	else
-	{
-		k = best_moves->to_a;
-		best_moves->to_b -= k;
-		best_moves->to_a = 0;
-	}
-	while (k-- > 0)
-		rr(a, b, 1);
-	while ((best_moves->to_a)-- > 0)
-		ra(a, 1);
-	while ((best_moves->to_b)-- > 0)
-		rb(b, 1);
-}
-
-static void	rotate_best_reverse(stack *a, stack *b, moves *best_moves)
-{
-	int	k;
-
-	best_moves->to_a = absolute(best_moves->to_a);
-	best_moves->to_b = absolute(best_moves->to_b);
-	if (best_moves->to_a > best_moves->to_b)
-	{
-		k = best_moves->to_b;
-		best_moves->to_a -= k;
-		best_moves->to_b = 0;
-	}
-	else
-	{
-		k = best_moves->to_a;
-		best_moves->to_b -= k;
-		best_moves->to_a = 0;
-	}
-	while (k-- > 0)
-		rrr(a, b, 1);
-	while ((best_moves->to_a)-- > 0)
-		rra(a, 1);
-	while ((best_moves->to_b)-- > 0)
-		rrb(b, 1);
-}
-
-static void	push_best(stack *a, stack *b)
-{
-	moves	*best_moves;
+	t_moves	*best_moves;
 	int		k;
 
 	best_moves = calc_best_moves(a, b);
 	if (best_moves->to_a > 0 && best_moves->to_b > 0)
-		rotate_best(a, b, best_moves);
+		rotate_rr(a, b, best_moves);
 	else if (best_moves->to_a < 0 && best_moves->to_b < 0)
-		rotate_best_reverse(a, b, best_moves);
+		rotate_rrr(a, b, best_moves);
 	else
-	{
-		k = 0;
-		while (k++ < absolute(best_moves->to_b))
-		{
-			if (best_moves->to_b > 0)
-				rb(b, 1);
-			else
-				rrb(b, 1);
-		}
-		k = 0;
-		while (k++ < absolute(best_moves->to_a))
-		{
-			if (best_moves->to_a > 0)
-				ra(a, 1);
-			else
-				rra(a, 1);
-		}
-	}
+		rotate_diff(a, b, best_moves);
 	pa(a, b, 1);
 	free(best_moves);
 }
 
-static lis	*get_lis(stack *a)
+static t_lis	*get_lis(t_stack *a)
 {
-	stack	*temp;
-	lis		*lis_temp;
+	t_stack	*temp;
+	t_lis	*lis_temp;
 	int		min_temp;
 	int		min;
 
@@ -112,17 +45,17 @@ static lis	*get_lis(stack *a)
 		else
 			rotate_stack_reverse(temp);
 	}
-	lis_temp = find_LIS(temp->stack, temp->size);
+	lis_temp = find_lis(temp->stack, temp->size);
 	free(temp->stack);
 	free(temp);
 	return (lis_temp);
 }
 
-void	sort_100(stack *a, stack *b)
+void	sort_100(t_stack *a, t_stack *b)
 {
-	lis	*lis_temp;
-	int	min_index;
-	int	min_a;
+	t_lis	*lis_temp;
+	int		min_index;
+	int		min_a;
 
 	lis_temp = get_lis(a);
 	while (a->size > lis_temp->size)

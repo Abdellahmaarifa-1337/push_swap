@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:07:27 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:07:47 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:24:20 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	append(stack *stack, int n)
+void	append(t_stack *stack, int n)
 {
 	int	i;
 

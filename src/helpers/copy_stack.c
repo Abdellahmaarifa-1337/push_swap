@@ -6,19 +6,19 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:09:25 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:09:31 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:24:41 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-stack	*copy_stack(stack *a)
+t_stack	*copy_stack(t_stack *a)
 {
-	stack	*temp;
+	t_stack	*temp;
 	int		i;
 	int		*temp_arr;
 
-	temp = (stack *)malloc(sizeof(stack));
+	temp = (t_stack *)malloc(sizeof(t_stack));
 	temp_arr = (int *)malloc(sizeof(int) * a->size);
 	i = 0;
 	while (i < a->size)

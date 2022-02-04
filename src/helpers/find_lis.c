@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:13:43 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:13:45 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:35:33 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int *get_LIS(int *arr, int LIS_index, int LIS_size, int size)
     return LIS;
 }
 */
-void	append_to_lis(lis *lis_list, int elm)
+void	append_to_lis(t_lis *lis_list, int elm)
 {
 	int	*new_arr;
 	int	i;
@@ -68,14 +68,14 @@ void	append_to_lis(lis *lis_list, int elm)
 	lis_list->size += 1;
 }
 
-lis	*copy_lis(lis *lis_list)
+t_lis	*copy_lis(t_lis *lis_list)
 {
-	lis	*temp;
-	int	*arr;
-	int	i;
+	t_lis	*temp;
+	int		*arr;
+	int		i;
 
-	*arr = (int *)malloc(sizeof(int) * lis_list->size);
-	temp = (lis *)malloc(sizeof(lis));
+	arr = (int *)malloc(sizeof(int) * lis_list->size);
+	temp = (t_lis *)malloc(sizeof(t_lis));
 	i = 0;
 	while (i < lis_list->size)
 	{
@@ -87,17 +87,17 @@ lis	*copy_lis(lis *lis_list)
 	return (temp);
 }
 
-lis	**init_lises(int *arr, int size)
+t_lis	**init_lises(int *arr, int size)
 {
-	lis	**all_lis;
-	int	n;
-	lis	*init_lis;
+	t_lis	**all_lis;
+	int		n;
+	t_lis	*init_lis;
 
 	n = 0;
-	all_lis = (lis **)malloc(sizeof(lis *) * size);
+	all_lis = (t_lis **)malloc(sizeof(t_lis *) * size);
 	while (n < size)
 	{
-		init_lis = (lis *)malloc(sizeof(lis));
+		init_lis = (t_lis *)malloc(sizeof(t_lis));
 		init_lis->arr = (int *)malloc(sizeof(int) * 1);
 		init_lis->arr[0] = 0;
 		init_lis->size = 0;
@@ -108,10 +108,10 @@ lis	**init_lises(int *arr, int size)
 	return (all_lis);
 }
 
-lis	*get_perfect_lis(lis **all_lis, int size)
+t_lis	*get_perfect_lis(t_lis **all_lis, int size)
 {
-	lis	*temp;
-	int	i;
+	t_lis	*temp;
+	int		i;
 
 	temp = copy_lis(all_lis[0]);
 	i = 1;
@@ -130,12 +130,12 @@ lis	*get_perfect_lis(lis **all_lis, int size)
 	return (temp);
 }
 
-lis	*find_LIS(int *arr, int size)
+t_lis	*find_lis(int *arr, int size)
 {
-	lis	**all_lis;
-	lis	*perfect_lis;
-	int	j;
-	int	i;
+	t_lis	**all_lis;
+	t_lis	*perfect_lis;
+	int		j;
+	int		i;
 
 	all_lis = init_lises(arr, size);
 	i = 1;
@@ -156,6 +156,5 @@ lis	*find_LIS(int *arr, int size)
 		i++;
 	}
 	perfect_lis = get_perfect_lis(all_lis, size);
-	free(all_lis);
 	return (perfect_lis);
 }

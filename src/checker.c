@@ -6,14 +6,14 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:27:36 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:35:10 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:29:02 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
 //fuctions_table functions[] = {&foo, &bar};
-int	proccess_instruction(stack *a, stack *b, char *instruction)
+int	proccess_instruction(t_stack *a, t_stack *b, char *instruction)
 {
 	if (!ft_strncmp(instruction, "pa\n", 3))
 		return (pa(a, b, 0));
@@ -40,7 +40,7 @@ int	proccess_instruction(stack *a, stack *b, char *instruction)
 	return (0);
 }
 
-void	print_stack(stack *a, char stack)
+void	print_stack(t_stack *a, char stack)
 {
 	int	i;
 
@@ -52,15 +52,15 @@ void	print_stack(stack *a, char stack)
 
 int	main(int ac, char **av)
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 	char	*instruction;
 
 	if (ac == 1)
 		return (0);
 	error_checker(ac, av);
 	a = init_stack(ac, av);
-	b = (stack *)malloc(sizeof(stack));
+	b = (t_stack *)malloc(sizeof(t_stack));
 	b->stack = (int *)malloc(sizeof(int) * (ac));
 	b->size = 0;
 	instruction = get_next_line(0, 3);

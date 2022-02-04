@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:35:58 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:38:21 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:31:54 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	throw_err(void)
+void	throw_err(void)
 {
 	printf("Error\n");
 	exit(0);

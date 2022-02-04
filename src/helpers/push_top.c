@@ -6,13 +6,13 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:18:56 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 12:19:14 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/04 20:27:07 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	push_top(stack *stack_1, stack *stack_2)
+int	push_top(t_stack *stack_1, t_stack *stack_2)
 {
 	int	temp;
 
