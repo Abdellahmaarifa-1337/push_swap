@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/04 12:23:52 by amaarifa          #+#    #+#             */
+/*   Updated: 2022/02/04 12:24:12 by amaarifa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-int pb(stack *a, stack *b, int print)
-{ 
-    int temp;
+int	pb(stack *a, stack *b, int print)
+{
+	int	temp;
 
-    if (push_top(b, a) && print)
+	if (push_top(b, a) && print)
 		ft_putstr("pb\n");
-	return 1;
+	return (1);
 }

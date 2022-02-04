@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/04 12:40:34 by amaarifa          #+#    #+#             */
+/*   Updated: 2022/02/04 12:41:19 by amaarifa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
 typedef struct stacks {
-	int *stack;
-	int size;
-} stack;
+	int	*stack;
+	int	size;
+}	stack;
 
 typedef struct LIS {
 	int *arr;
@@ -69,7 +82,7 @@ int rrr(stack *a, stack *b, int print);
 
 //error checker 
 int error_checker(int ac, char **av);
-
+static void throw_err();
 //sorting algo
 void sort_stack(stack *a, stack *b);
 void sort_three(stack *a, stack *b);

@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/04 12:06:08 by amaarifa          #+#    #+#             */
+/*   Updated: 2022/02/04 12:06:51 by amaarifa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void sort_three(stack *a, stack *b)
+void	sort_three(stack *a, stack *b)
 {
-	int i = find_max(a);
+	int	i;
+
+	i = find_max(a);
 	if (i == 0)
 	{
 		ra(a, 1);
