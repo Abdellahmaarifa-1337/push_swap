@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:05:35 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 13:13:05 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:38:00 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	push_min(t_stack *a, t_stack *b, int index)
 	min = a->stack[index];
 	while (a->stack[0] != min)
 	{
-		if (index < a->size)
+		if (index < a->size / 2)
 			ra(a, 1);
 		else
 			rra(a, 1);

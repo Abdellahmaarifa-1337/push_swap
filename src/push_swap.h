@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:40:34 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 13:12:53 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 17:31:37 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int		calc_moves_to_b(t_stack *b, int elm);
 int		calc_moves_to_a(t_stack *a, int elm);
 t_moves	*calc_best_moves(t_stack *a, t_stack *b);
 int		smallest_before_x(t_stack *a, int elm);
-
+void	sort_500(t_stack *a, t_stack *b);
 //temprary functions
 void	print_stack(t_stack *a, char stack);
 

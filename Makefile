@@ -2,7 +2,8 @@ CC = CC
 CFLAGS = -Wall -Werror -Wextra
 
 ALGORITHMS_SRC = src/algorithms/calc_moves.c src/algorithms/sort_100.c \
-				src/algorithms/sort_five.c src/algorithms/sort_three.c
+				src/algorithms/sort_five.c src/algorithms/sort_three.c \
+				src/algorithms/sort_500.c
 
 HELPERS_SRC = src/helpers/absolute.c src/helpers/append.c \
 				src/helpers/copy_sorted_stack.c src/helpers/copy_stack.c \
@@ -54,8 +55,9 @@ ${CHECKER_OBJ}: ${CHECKER_SRC}
 
 
 clean:
-	rm -rf ${PUSH_SWAP_OBJ} ${CHECKER_OBJ} ${NAME} ${CHECKER}
-
+	rm -rf ${PUSH_SWAP_OBJ} ${CHECKER_OBJ}
+fclean: clean
+	rm -rf  ${NAME} ${CHECKER}
 re: clean all
 
 .PHONY: clean checker re
