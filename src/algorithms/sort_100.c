@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:56:44 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:53:11 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:11:47 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	push_best(t_stack *a, t_stack *b)
 {
 	t_moves	*best_moves;
-	int		k;
 
 	best_moves = calc_best_moves(a, b);
 	if (best_moves->to_a > 0 && best_moves->to_b > 0)

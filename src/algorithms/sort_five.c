@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:05:35 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:23:48 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:13:05 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort_five(t_stack *a, t_stack *b)
 {
 	push_min(a, b, find_min(a));
 	push_min(a, b, find_min(a));
-	sort_three(a, b);
+	sort_three(a);
 	pa(a, b, 1);
 	pa(a, b, 1);
 }

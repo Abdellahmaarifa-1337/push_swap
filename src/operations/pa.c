@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:23:21 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:27:46 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:11:14 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	pa(t_stack *a, t_stack *b, int print)
 {
-	int	temp;
-
 	if (push_top(a, b) && print)
 		ft_putstr("pa\n");
 	return (1);

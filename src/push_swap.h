@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:40:34 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:50:56 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:12:53 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	throw_err(void);
 
 //sorting algo
 void	sort_stack(t_stack *a, t_stack *b);
-void	sort_three(t_stack *a, t_stack *b);
+void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
 void	sort_100(t_stack *a, t_stack *b);
 int		calc_moves_to_b(t_stack *b, int elm);

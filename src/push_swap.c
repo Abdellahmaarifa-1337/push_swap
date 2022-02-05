@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:38:33 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:34:52 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:23:07 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int ac, char **av)
 	b->size = 0;
 	if (!is_sorted(a->stack, a->size))
 		sort_stack(a, b);
+	print_stack(a, 'a');
 	free(a->stack);
 	free(b->stack);
 	free(a);

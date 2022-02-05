@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:23:52 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:27:52 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:11:24 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	pb(t_stack *a, t_stack *b, int print)
 {
-	int	temp;
-
 	if (push_top(b, a) && print)
 		ft_putstr("pb\n");
 	return (1);

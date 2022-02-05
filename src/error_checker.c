@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:35:58 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:31:54 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:10:58 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static int	is_duplicate(char *s, char **av, int ac)
 {
 	int		i;
 	int		count;
-	char	*str;
 
 	i = 1;
 	count = 0;

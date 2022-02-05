@@ -1,7 +1,7 @@
 CC = CC
+CFLAGS = -Wall -Werror -Wextra
 
-
-ALGORITHMS_SRC = /src/algorithms/calc_moves.c src/algorithms/sort_100.c \
+ALGORITHMS_SRC = src/algorithms/calc_moves.c src/algorithms/sort_100.c \
 				src/algorithms/sort_five.c src/algorithms/sort_three.c
 
 HELPERS_SRC = src/helpers/absolute.c src/helpers/append.c \
@@ -25,31 +25,37 @@ OPERATIONS_SRC = src/operations/main.c src/operations/pa.c \
 				src/operations/rrr.c src/operations/sa.c \
 				src/operations/sb.c src/operations/ss.c \
 
-PUSH_SWAP_SRC = src/push_swap.c src/sort_stack.c src/error_checker.c
+PUSH_SWAP_MAIN = src/push_swap.c src/sort_stack.c src/error_checker.c
 
-CHECKER = src/checker.c src/error_checker.c
+CHECKER_MAIN = src/checker.c src/error_checker.c
 
 
-SRC = ${ALGORITHMS_SRC} ${HELPERS_SRC} ${OPERATIONS_SRC} ${OPERATIONS_SRC} ${PUSH_SWAP_SRC}
-CHECKER_SRC = ${ALGORITHMS_SRC} ${HELPERS_SRC} ${OPERATIONS_SRC} ${OPERATIONS_SRC} ${CHECKER}
+PUSH_SWAP_SRC = ${PUSH_SWAP_MAIN} ${OPERATIONS_SRC} ${HELPERS_SRC} ${ALGORITHMS_SRC}
+CHECKER_SRC = ${CHECKER_MAIN} ${OPERATIONS_SRC} ${HELPERS_SRC} ${ALGORITHMS_SRC}
 
-OBJ = ${SRC:.c=.o}
+PUSH_SWAP_OBJ = ${PUSH_SWAP_SRC:.c=.o}
 CHECKER_OBJ = ${CHECKER_SRC:.c=.o}
-NAME = push_swap.out
-CHECKER = checker.out
 
-all: ${ALGORITHMS_OBJ} ${HELPERS_OBJ} ${OPERATIONS_OBJ} ${OPERATIONS_OBJ} ${PUSH_SWAP}
-	${CC} ${CFLAGS}  ${ALGORITHMS_OBJ} ${HELPERS_OBJ} ${OPERATIONS_OBJ} ${OPERATIONS_OBJ} ${PUSH_SWAP} -o ${NAME}
+
+NAME = push_swap
+CHECKER = checker
+
+.c.o: 
+	${CC} ${CFLAGS} -c $< -o $@
+
+all: ${PUSH_SWAP_OBJ}
+	${CC} ${CFLAGS} ${PUSH_SWAP_OBJ} ${PUSH_SWAP} -o ${NAME}
 
 checker: ${CHECKER_OBJ}
-	${CC} ${CHECKER_OBJ} -o ${CHECKER}
+	${CC} ${CFLAGS} ${CHECKER_OBJ} -o ${CHECKER}
 
-${OBJ}: ${SRC}
-
-
-
+${PUSH_SWAP_OBJ}: ${PUSH_SWAP_SRC}
 ${CHECKER_OBJ}: ${CHECKER_SRC}
-${ALGORITHMS_SRC} ${HELPERS_SRC} ${OPERATIONS_SRC} ${OPERATIONS_SRC} ${PUSH_SWAP_SRC}
-clean:
-	rm -rf ${OBJ} ${CHECKER_OBJ}
 
+
+clean:
+	rm -rf ${PUSH_SWAP_OBJ} ${CHECKER_OBJ} ${NAME} ${CHECKER}
+
+re: clean all
+
+.PHONY: clean checker re

@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:40:08 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:29:33 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:12:45 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_stack(t_stack *a, t_stack *b)
 {
 	if (a->size <= 3)
-		sort_three(a, b);
+		sort_three(a);
 	else if (a->size <= 5)
 		sort_five(a, b);
 	else if (a->size <= 100)
