@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:27:36 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:29:02 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:02:37 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,6 @@ int	proccess_instruction(t_stack *a, t_stack *b, char *instruction)
 	if (!ft_strncmp(instruction, "ss\n", 3))
 		return (ss(a, b, 0));
 	return (0);
-}
-
-void	print_stack(t_stack *a, char stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < a->size)
-		printf("%d\n", a->stack[i++]);
-	printf("-------\nstack %c\n", stack);
 }
 
 int	main(int ac, char **av)

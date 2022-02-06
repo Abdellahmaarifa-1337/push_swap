@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:35:58 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 13:10:58 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 20:27:29 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	throw_err(void)
 {
-	printf("Error\n");
-	exit(0);
+	ft_putstr("Error\n");
+	exit(1);
 }
 
 static int	is_duplicate(char *s, char **av, int ac)

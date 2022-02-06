@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:49:30 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/06 17:03:51 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:15:46 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int	calc_moves_to_a(t_stack *a, int elm)
 	else
 		return (i - a->size + 1);
 }
-static int best_moves(int a, int b)
+
+static int	best_moves(int a, int b)
 {
 	if (a > 0 && b > 0)
 	{
@@ -68,16 +69,17 @@ static int best_moves(int a, int b)
 	else
 		return (absolute(a) + absolute(b));
 }
+
 t_moves	*calc_best_moves(t_stack *a, t_stack *b)
 {
 	t_moves	*push_moves;
 	int		i;
 	int		to_b;
 	int		to_a;
-	int 	k;
-	
+	int		k;
+
 	push_moves = (t_moves *)malloc(sizeof(t_moves));
-	k = 10000000;
+	k = INT_MAX;
 	i = 0;
 	while (i < b->size)
 	{

@@ -6,17 +6,16 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:40:34 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 17:31:37 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:16:57 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct stacks {
 	int	*stack;
@@ -91,13 +90,10 @@ void	throw_err(void);
 void	sort_stack(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
-void	sort_100(t_stack *a, t_stack *b);
+void	sort_big(t_stack *a, t_stack *b);
 int		calc_moves_to_b(t_stack *b, int elm);
 int		calc_moves_to_a(t_stack *a, int elm);
 t_moves	*calc_best_moves(t_stack *a, t_stack *b);
 int		smallest_before_x(t_stack *a, int elm);
-void	sort_500(t_stack *a, t_stack *b);
-//temprary functions
-void	print_stack(t_stack *a, char stack);
 
 #endif
