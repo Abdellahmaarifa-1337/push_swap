@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:49:30 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/04 20:22:42 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:03:51 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,43 @@ int	calc_moves_to_a(t_stack *a, int elm)
 	else
 		return (i - a->size + 1);
 }
-
+static int best_moves(int a, int b)
+{
+	if (a > 0 && b > 0)
+	{
+		if (a > b)
+			return (a);
+		else
+			return (b);
+	}
+	else if (a < 0 && b < 0)
+	{
+		if (a < b)
+			return (absolute(a));
+		else
+			return (absolute(b));
+	}
+	else
+		return (absolute(a) + absolute(b));
+}
 t_moves	*calc_best_moves(t_stack *a, t_stack *b)
 {
 	t_moves	*push_moves;
 	int		i;
 	int		to_b;
 	int		to_a;
-
+	int 	k;
+	
 	push_moves = (t_moves *)malloc(sizeof(t_moves));
-	push_moves->to_a = a->size * 2;
-	push_moves->to_b = a->size * 2;
+	k = 10000000;
 	i = 0;
 	while (i < b->size)
 	{
 		to_b = calc_moves_to_b(b, b->stack[i]);
 		to_a = calc_moves_to_a(a, b->stack[i]);
-		if ((absolute(to_b) + absolute(to_a))
-			< (absolute(push_moves->to_a) + absolute(push_moves->to_b)))
+		if (best_moves(to_a, to_b) < k)
 		{
+			k = best_moves(to_a, to_b);
 			push_moves->to_a = to_a;
 			push_moves->to_b = to_b;
 			push_moves->index = i;

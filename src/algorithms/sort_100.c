@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:56:44 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 23:28:30 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:51:38 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static t_lis	*get_lis(t_stack *a)
 	}
 
 	lis_temp = find_lis(temp->stack, temp->size);
-	free(temp->stack);
+	free(temp->stack); 
 	free(temp);
 	return (lis_temp);
 }
@@ -56,14 +56,14 @@ void	sort_100(t_stack *a, t_stack *b)
 	t_lis	*lis_temp;
 	int		min_index;
 	int		min_a;
-	
+	// 9 2 8 3 7 8 1     
 	lis_temp = get_lis(a);
 	while (a->size > lis_temp->size)
 	{
 		while (is_in_lis(lis_temp, a->stack[0]))
 			ra(a, 1);
 		 pb(a, b, 1);
-	}
+	} // 500
 	free(lis_temp->arr);
 	free(lis_temp);
 	while (b->size)

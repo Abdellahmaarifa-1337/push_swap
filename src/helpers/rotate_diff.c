@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 20:53:44 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/05 21:59:08 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 15:41:50 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,14 @@ void	rotate_diff(t_stack *a, t_stack *b, t_moves *best_moves)
 		b_mv = best_moves->to_a;
 		size = b->size;
 	}
-
 	if (a_mv + size >= b_mv)
 		k = a_mv + size;
 	else
 		k = b_mv;
-	
+
 	if (k < (absolute(a_mv) + absolute(b_mv)))
 	{
-		//methode 1
+		//methode 1 rr
 		if (best_moves->to_a < 0)
 		{
 			best_moves->to_a += a->size;
@@ -53,7 +52,7 @@ void	rotate_diff(t_stack *a, t_stack *b, t_moves *best_moves)
 	}
 	else
 	{
-		//method 2
+		//method 2 rr && rrr
 		k = 0;
 		while (k++ < absolute(best_moves->to_b))
 		{

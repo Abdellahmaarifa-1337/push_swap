@@ -43,7 +43,7 @@ CHECKER = checker
 
 .c.o: 
 	${CC} ${CFLAGS} -c $< -o $@
-
+	
 all: ${PUSH_SWAP_OBJ}
 	${CC} ${CFLAGS} ${PUSH_SWAP_OBJ} ${PUSH_SWAP} -o ${NAME}
 
