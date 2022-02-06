@@ -1,9 +1,8 @@
-CC = CC
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-ALGORITHMS_SRC = src/algorithms/calc_moves.c src/algorithms/sort_100.c \
-				src/algorithms/sort_five.c src/algorithms/sort_three.c \
-				src/algorithms/sort_500.c
+ALGORITHMS_SRC = src/algorithms/calc_moves.c src/algorithms/sort_big.c \
+				src/algorithms/sort_five.c src/algorithms/sort_three.c 
 
 HELPERS_SRC = src/helpers/absolute.c src/helpers/append.c \
 				src/helpers/copy_sorted_stack.c src/helpers/copy_stack.c \
@@ -17,14 +16,14 @@ HELPERS_SRC = src/helpers/absolute.c src/helpers/append.c \
 				src/helpers/rotate_rr.c src/helpers/rotate_rrr.c \
 				src/helpers/rotate_stack.c src/helpers/rotate_stack_reverse.c \
 				src/helpers/shift.c src/helpers/sort_arr.c \
-				src/helpers/str_isdigit.c src/helpers/swap_top.c \
+				src/helpers/str_isdigit.c src/helpers/swap_top.c 
 
 OPERATIONS_SRC = src/operations/main.c src/operations/pa.c \
 				src/operations/pb.c src/operations/ra.c \
 				src/operations/rb.c src/operations/rr.c \
 				src/operations/rra.c src/operations/rrb.c \
 				src/operations/rrr.c src/operations/sa.c \
-				src/operations/sb.c src/operations/ss.c \
+				src/operations/sb.c src/operations/ss.c 
 
 PUSH_SWAP_MAIN = src/push_swap.c src/sort_stack.c src/error_checker.c
 
@@ -43,11 +42,16 @@ CHECKER = checker
 
 .c.o: 
 	${CC} ${CFLAGS} -c $< -o $@
-	
-all: ${PUSH_SWAP_OBJ}
-	${CC} ${CFLAGS} ${PUSH_SWAP_OBJ} ${PUSH_SWAP} -o ${NAME}
 
-checker: ${CHECKER_OBJ}
+all:  ${NAME}
+
+${NAME}: ${PUSH_SWAP_OBJ}
+	${CC} ${CFLAGS} ${PUSH_SWAP_OBJ} -o ${NAME}
+
+
+checker: ${CHECKER}
+
+${CHECKER}: ${CHECKER_OBJ}
 	${CC} ${CFLAGS} ${CHECKER_OBJ} -o ${CHECKER}
 
 ${PUSH_SWAP_OBJ}: ${PUSH_SWAP_SRC}
@@ -58,6 +62,6 @@ clean:
 	rm -rf ${PUSH_SWAP_OBJ} ${CHECKER_OBJ}
 fclean: clean
 	rm -rf  ${NAME} ${CHECKER}
-re: clean all
+re: fclean all
 
-.PHONY: clean checker re
+.PHONY: clean fclean checker re
