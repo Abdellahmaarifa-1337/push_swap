@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:40:34 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/06 21:16:57 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:56:22 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct moves {
 	int	index;
 }	t_moves;
 
-// HELPERS
+/* HELPERS */
 void	ft_putstr(char *s);
 int		swap_top(t_stack *stack);
 int		push_top(t_stack *stack_1, t_stack *stack_2);
@@ -60,7 +60,7 @@ void	rotate_rr(t_stack *a, t_stack *b, t_moves *best_moves);
 void	rotate_rrr(t_stack *a, t_stack *b, t_moves *best_moves);
 void	rotate_diff(t_stack *a, t_stack *b, t_moves *best_moves);
 
-//GET NEXT LINE
+/* GET NEXT LINE */
 char	*ft_substr(char *s, unsigned int start, size_t len);
 int		get_nl(const char *s);
 char	*ft_strdup(const char	*src);
@@ -69,7 +69,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd, int buffer_size);
 char	*get_line(char **s);
 
-// OPERATION
+/* OPERATION */
 int		sa(t_stack *a, int print);
 int		sb(t_stack *b, int print);
 int		ss(t_stack *a, t_stack *b, int print);
@@ -82,11 +82,11 @@ int		rra(t_stack *a, int print);
 int		rrb(t_stack *b, int print);
 int		rrr(t_stack *a, t_stack *b, int print);
 
-//error checker 
+/* error checker */
 int		error_checker(int ac, char **av);
 void	throw_err(void);
 
-//sorting algo
+/* sorting algo */
 void	sort_stack(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);

@@ -6,7 +6,7 @@
 /*   By: amaarifa <amaarifa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:27:36 by amaarifa          #+#    #+#             */
-/*   Updated: 2022/02/06 21:02:37 by amaarifa         ###   ########.fr       */
+/*   Updated: 2022/02/06 22:10:08 by amaarifa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ int	main(int ac, char **av)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
+	free(b);
+	free(a);
 	return (0);
 }
