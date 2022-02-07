@@ -49,9 +49,7 @@ ${NAME}: ${PUSH_SWAP_OBJ}
 	${CC} ${CFLAGS} ${PUSH_SWAP_OBJ} -o ${NAME}
 
 
-checker: ${CHECKER}
-
-${CHECKER}: ${CHECKER_OBJ}
+checker: ${CHECKER_OBJ}
 	${CC} ${CFLAGS} ${CHECKER_OBJ} -o ${CHECKER}
 
 ${PUSH_SWAP_OBJ}: ${PUSH_SWAP_SRC}
@@ -64,4 +62,4 @@ fclean: clean
 	rm -rf  ${NAME} ${CHECKER}
 re: fclean all
 
-.PHONY: clean fclean checker re
+.PHONY: clean fclean re
